@@ -1,1 +1,4 @@
-# Software-Technology-1----Assignment-2
+# SoftwareTechnology1--Assignment2
+
+<p> Please stalk my repo </p> 
+
