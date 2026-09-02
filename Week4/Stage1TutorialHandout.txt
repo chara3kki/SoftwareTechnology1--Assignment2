@@ -1,0 +1,26 @@
+Activity 1 -- Think-Pair-Share
+
+If ChatGPT or Copipot can produce a 100-line Python application very quickly, what
+knowledge does a software engineer still need? 
+
+1. Code comprehension
+2. Code security
+3. Practical application to code or something like that 
+
+Activity 2 -- Is this Software Engineering? 
+Scenario A: A studnt writes a 50-line Python Calculator
+Scenario B: A team develops a pyroll system used by 5,000 employees
+Scenario C: An AI assistant generates a simple appointment application from one prompt
+
+Scenario    Programming?    Software Engineering?   Why
+A           Yes             Yes                     Student wrote and designed the Calculator
+B           Yes             Yes                     They programmed to create and to create is to be an engineer           
+C           No              No                      Ai assistant is not human. Can't gain a title and no one is programming.
+
+Activity 3 -- SmartCare Problem Analysis
+Client statement: SmartCare Community Clinic currently uses spreadsheets and paper records to manage
+patients and appointments. The clinic wants new software to improve these processes. 
+
+Tast 1 -- Identify stakeholders
+
+Stakeholder             What do they need?
