@@ -1,0 +1,53 @@
+Week 5 Tutorial
+
+We are talking about looops in this tutorial. I don't really care but I lowkey need to know how to loop in python hahaha. 
+
+Terms:
+
+while -> loop depends on the condition.
+for -> the sequence or if the number of iteration is known
+continue -> skip the remaining steps of the iteration and move to next one
+break -> just stop everything, come out of the loop
+
+# while loop example 
+counter = 0
+while counter < 5:
+    print(counter, "Hello")
+    counter += 1
+
+- shift + a to move the cursor to the end of the line in VIM [This shit is a pain in the ass]
+- gg to move to the bottom of the page.
+- shift + g to g to the top of the page.
+
+- I want to go back to learning C++. This langauge is a snoozefest.
+
+# for loop example
+
+for counter in range(5):
+    print(counter, "Hello")
+
+- By default, counter = 0 at the start. You can also state like this.
+
+for counter in range(1, 5, 2) where:
+
+the format is range(start, stop, increment/decrement) 
+
+# tkinter graphics
+
+import tkinter 
+
+import tkinter as tk [exactly the same as using namespace std]
+
+window = tk.Tk()
+window.geometry("500x500")
+window.title("My first application") // adds the window title obviously 
+
+name_label = tk.Label(window, text= "Enter your name:   ") // creates a widget
+name_label.pack() // initialises the thing i think. idk. I think you have to do this everytime to initialise the thing.
+
+
+
+window.mainloop()
+
+- just learning about tkinter. I'll figure it out myself bro.
+- I think the best part about vim is that I can use my 60% keyboard
