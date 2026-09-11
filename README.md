@@ -1,6 +1,3 @@
 # SoftwareTechnology1--Assignment2
 
-<p> Please stalk my repo </p> 
-
-<p> might customise this later </p>
-
+- I wonder if you guys actually are checking my repo

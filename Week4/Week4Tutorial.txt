@@ -1,0 +1,23 @@
+if grade >= 85:
+    print("HD)
+if grade >= 50:
+    print("P")
+else:
+    print("Fail")
+
+- In the code snippet above, the 'else' will belong to the Pass if function. If you change the if statement to
+elif. The 'else' will apply to all of the conditions listed above. 
+
+- Exceptions: Everything that could go wrong in the program. Using string input or not-specific sting input when 
+expected. You can use else-if's to circumvent this, but i'd rather use try and catch. 
+
+if inut_grade.isnumeric(); [will return true only if there is only numbers in the variable]
+
+if input_grade.replace(old: ".", new:"", count:1).isnumeric()
+    grade: float - float(input_grade)
+    print(grade, type(grade))
+
+- Will temporarily replace the float (decimal) in input_grade thus changing it to an integer temporarily.
+.isnumeric() only accepts ints. This will temporarily change it for .isnumeric(), input_grade stays the same.
+
+
