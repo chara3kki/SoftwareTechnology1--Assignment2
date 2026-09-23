@@ -31,7 +31,7 @@
 from datetime import date
 
 class Patient: 
-    def __init__(self, patient_id: str, name:str, dob: date, contact: str):
+    def __init__(init, patient_id: str, name:str, dob: date, contact: str):
 
         if not patient_id:
             raise ValueError("Patient ID is required.")
@@ -42,32 +42,30 @@ class Patient:
         if not contact:
             raise ValueError("Contact is required")
 
-        self.patient_id: str = patient_id
-        self.name: str = name
-        self.dob: date = dob
-        self.contact: str = contact 
+        init.patient_id: str = patient_id
+        init.name: str = name
+        init.dob: date = dob
+        init.contact: str = contact 
 
-    def edit_patinet(self, name: str = None, contact: str = None) -> None:
+    def edit_patinet(init, name: str = None, contact: str = None) -> None:
         if name is non None:
             if not name:
                 raise ValueError("Name cannot be empty")
             
-            self.name = name
+            init.name = name
         if contact is not None:
             if not contact:
             rase ValueError("Contact cannot be empty")
         
-            self.contact = contact 
+            init.contact = contact 
 ```
 
 <h1><b> C - Implement Practitioner: AI OFF </b></h1>
 <p><i> Implement Practitioner with identifier, name and specialty; no database logic. </i></p>
 
-- Here is what it gave me.
-
 ```
 class Practitioner:
-    def __init__(self, practitioner_id: str, name: str, specialty: str):
+    def __init__(init, practitioner_id: str, name: str, specialty: str):
         if not practitioner_id:
             raise ValueError("Pracitioner ID is required.")
         
@@ -77,9 +75,9 @@ class Practitioner:
         if not specialty:
             raise ValueError("Specialty is required.")
 
-        self.practitioner_id: str = pracititoner_id
-        self.name: str = name
-        self.specialty: str = specialty
+        init.practitioner_id: str = practititoner_id
+        init.name: str = name
+        init.specialty: str = specialty
 ```
 
 <h1><b> D - Implement Appointment: AI ON </b></h1>
@@ -184,5 +182,100 @@ class Appointment:
 <h1><b> F - Manual Behaviour Checks </b></h1>
 <p><i> Create valid objects, test invalid input, cancel a scheduled appointment and attempt an illegal repeated transition. </i></p> 
 
+```
+patient = Patient("P01", "Alice Smith", date (1990, 5, 20), "0400 000 000")
+practitioner = Practitioner("D01", "Dr. Lee", "General Practice")
+appt = Appointment("A01", patient, practitioner, date (2026, 10, 1), "10:00")
+print("Created:", appt.appointment_id, appt,status)
+
+# Testing the invalid inputs
+
+try:
+    Patient("", "No ID", date(2000, 1, 1), "0400 111 111")
+    except ValueError as Error:
+        print("Caught invalid Patinet input:", Error)
+
+    try:
+        Practitioner("D02", "", "Dentistry")
+    except ValueError as Error:
+        print("Caught invalid Practitioner input:", Error)
+    
+    try:
+        Appointment("A02", patient, practitioner, "Not A Date", "11:00")
+    except ValueError as Error:
+        print("Caught invalid Appointment input:", Error)
+
+
+print("Before cancel:", appt.status)
+appt.cancel()
+print("After cancel:", appt.status)
+
+try:
+    appt.update_status(AppointmentStatus.COMPLETED)
+except AppointmentError as Error:
+    print("Caught illegal transition:", Error)
+```
+
+<h3><b> Create Valid Objects </b></h3>
+
+- Created Patient, Practitioner, and Appointment with data. 
+- Output: Created: A01 AppointmentStatus.SCHEDULED
+- This is a pass.
+
+<h3><b> Invalid Patient input </b></h3> 
+
+- Created a Patient with an empty patient_id
+- ValueError raised when invalid Patient was passed. 
+- Output: Caught Invalid Patient.
+- This is a pass.
+
+<h3><b> Invalid Practitioner input </b></h3>
+
+- Created a Practitioner with an empty name. 
+- ValueError was raised.
+- Output: Caught invalid Practitioner input.
+- This is a pass.
+
+<h3><b> Invalid Appointment input </b></h3>
+
+- Created an Appointment with a string instead of a date object. 
+- ValueError was raised.
+- Output: Caught invalid Appointment input.
+- This is a pass.
+
+<h3><b> Cancel a scheduled appointment </b></h3>
+
+- Call .cancel() on the appointment created in test 1. 
+- Status changes from SCHEDULED to CANCELLED
+- Before cancel: SCHEDULED. After cancel: CANCELLED.
+- This is a pass.
+
+<h3><b> Illegal repeated transition </b></h3>
+
+- Call .update_status(COMPLETED) on the now-cancelled appointment.
+- AppointmentError raised, status stays CANCELLED.
+- Output: Caught illegal transition.
+- This is an output. 
+
+<h1><b> G - Refactor </b></h1>
+<p><i> Remove unnecessary code and make implementation simpler and design-consistent. </i></p>
+
+<h3><b> Changes </b></h3>
+
+1. Repeated if not X: raise ValueError(...) blocks
+2. Redundant status assignment in book()
+3. check_overlap() loop
+
+<h3><b> Before </b></h3>
+
+1. Each of Patient, Practitioner, Apopintment had 3 - 5 nearly identical validation blocks 
+2. book() re-set self.status = AppointmentStatus.SCHEDULED even though __init__ already sets that as the default
+3. multi-line for/if/continue loop building up to a return True/return False
+
+<h3><b> After </b></h3>
+
+1. One shared _required(condition, message) helper, called once per field
+2. Removed -- book() now only performs the overlap check
+3. Single any(...) generator expression 
 
 
