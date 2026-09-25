@@ -278,4 +278,27 @@ except AppointmentError as Error:
 2. Removed -- book() now only performs the overlap check
 3. Single any(...) generator expression 
 
+<h1><b> H - AI Engineering Log </b></h1>
+<p><i> Record prompt, generated contribution, decisions and verification evidence. </i></p>
 
+<h3><b> Prompt Used </b></h3>
+
+"Act as a Python pair programmer. Implement only the Appointment class from the approved SmartCare UML. Use type hints and an AppointmentStatus enum. Cancelled appointments remain as objects. Do not add database, UI, notification or service classes. Protect status transitions and explain any decision not directly visible in the UML."
+
+<h3><b> Generated contribution: </b></h3>
+
+- AppointmentStatus enum with four values (SCHEDULED, COMPLETED, CANCELLED, ONGOING), matching the diagram's status: enum attribute.
+- One custom exception, AppointmentError, covering both scheduling conflicts and invalid status transitions.
+
+<h3><b> Verification evidence </b></h3>
+
+- Model-code consistency checks from Part H confirmed all UML attributes and operations are present in code with no extras. 
+- Manual behaviour checks in Part F exercised: valid object creation, invalid input on all three constructors, a successful cancellation, and the illegal cancelled. All four passed as expected and ValueError was raised exactly where the rules require it.
+- Code review in Part E confirmed no unsupported features, no unnecessary inheritance, and one legitimate dependency. 
+
+<h1><b> Reflection </b></h1>
+<p><i> Which AI-generated part did you modify or reject? Why? How did the approved design constrain the AI? </i></p>
+
+I approved the syntax of the code given by the AI. Especially when it comes to the try/catch section. I modified the code when it came to that, allowing for the code to be more readable. 
+
+The approved design constrains the AI by giving it a fixed class list [Patient, Pratitioner, Appointment and such]. 
