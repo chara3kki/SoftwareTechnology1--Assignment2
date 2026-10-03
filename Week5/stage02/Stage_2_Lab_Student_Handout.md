@@ -167,7 +167,7 @@ Classify each significant AI suggestion as Accepted, Modified, Rejected, or Unve
 Submit stakeholder analysis, scope, B-12FRs, 4-6 NFRs, 4-6 user stories, acceptance criteria, assumptions/open questions and selected AI review evidence. 
 </i><p>
 
-- Isn't this whole thing just the whole MD file that I just wrote? I don't know what to say hahahaa. 
+- Isn't this whole thing just the whole MD file that I just wrote? Bro just read everything before this and you've got this part finished.
 
 <h1><b> Reflection </b></h1> 
 
