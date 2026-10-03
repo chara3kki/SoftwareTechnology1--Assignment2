@@ -36,7 +36,7 @@
 
 5. The code isn't asynchronous so it just runs top to bottom. It doesn't run when the user prompts it to and that's really bad for applications.
 
-<h1><b> Part C - Use AI as Tutor: AI ON (Use only UC approved GenAI Tool such as Microsoft CoPilot)
+<h1><b> Part C - Use AI as Tutor: AI ON (Use only UC approved GenAI Tool such as Microsoft CoPilot) </b></h1>
 
 <h3><b> 1. What the code does </b></h3> 
 
